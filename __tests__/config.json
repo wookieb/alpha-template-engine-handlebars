@@ -1,0 +1,11 @@
+{
+  "testMatch": [
+    "**/*Test.ts"
+  ],
+  "transform": {
+    ".ts": "./node_modules/ts-jest/preprocessor.js"
+  },
+  "moduleFileExtensions": ["ts", "js"],
+  "testResultsProcessor": "./node_modules/ts-jest/coverageprocessor.js",
+  "testEnvironment": "node"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "alpha-template-engine-handlebars",
+  "version": "1.0.0",
+  "description": "alpha-template-engine implementation with Handlebars",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "jest --config __tests__/config.json",
+    "prepublish": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wookieb/alpha-template-engine-handlebars.git"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "keywords": [
+    "template-engine",
+    "alpha",
+    "packages",
+    "handlebars"
+  ],
+  "author": "Łukasz Kużyński <lukasz.kuzynski@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wookieb/alpha-template-engine-handlebars/issues"
+  },
+  "homepage": "https://github.com/wookieb/alpha-template-engine-handlebars#readme",
+  "devDependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/chai-as-promised": "0.0.30",
+    "@types/handlebars": "^4.0.32",
+    "@types/jest": "^19.2.2",
+    "@types/node": "^4.2.1",
+    "@types/sinon": "^2.1.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "handlebars": "^4.0.6",
+    "jest": "^19.0.2",
+    "sinon": "^2.1.0",
+    "ts-jest": "^19.0.6",
+    "typescript": "^2.2.2"
+  },
+  "dependencies": {
+    "alpha-template-engine": "1.0.*",
+    "escape-regexp": "0.0.1",
+    "handlebars": "^4.0.6"
+  }
+}
