@@ -1,20 +1,24 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
 const path = require("path");
 const Handlebars = require("handlebars");
 const regexpEscape = require('escape-regexp');
 class HandlebarsTemplateEngine {
+    /**
+     * @param {HandlebarsTemplateEngineOptions} [options]
+     */
     constructor(options) {
         this.compiledTemplates = Object.create(null);
-        this.compilerOptions = {};
         this.loadingTemplates = Object.create(null);
+        /**
+         * Compilation options provided to Handlebars.compile
+         *
+         * @type {Object}
+         */
+        this.compilerOptions = {};
         this.options = Object.assign({}, HandlebarsTemplateEngine.defaultOptions, options);
     }
-    /**
-     * @inheritDoc
-     * @param name
-     * @returns {Promise<boolean>}
-     */
     hasTemplate(name) {
         name = this.normalizeTemplateName(name);
         if (this.isCompiled(name)) {
@@ -64,7 +68,6 @@ class HandlebarsTemplateEngine {
     compileTemplate(name) {
         const path = this.getTemplatePath(name);
         if (path in this.loadingTemplates) {
-            console.log('returning precached promise', path);
             return this.loadingTemplates[path];
         }
         const loadContentPromise = new Promise((resolve, reject) => {
